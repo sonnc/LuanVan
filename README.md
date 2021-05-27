@@ -16,33 +16,33 @@ Bạn cần cài đặt các phần mềm sau đây:
  - Ram 4GB
 
 # Cài đặt
-Bước 1: Chạy Script tạo bảng dữ liệu trên MySQL 8.0
-Bước 2: Import mã nguồn vào Netbeans 8.2
-Bước 3: Vào file Hibernate.cfg chỉnh sửa thông số kết nối tới MySQL
-Bước 4: Nhấn Cleans and Build
-Bước 5: Nhấn Run Project
+ - Bước 1: Chạy Script tạo bảng dữ liệu trên MySQL 8.0
+ - Bước 2: Import mã nguồn vào Netbeans 8.2
+ - Bước 3: Vào file Hibernate.cfg chỉnh sửa thông số kết nối tới MySQL
+ - Bước 4: Nhấn Cleans and Build
+ - Bước 5: Nhấn Run Project
 
 # Kiểm tra
-Vào địa chỉ local host http://localhost:port_tomcat/QLCV/
-Nếu hệ thống trả về trang chủ thì đăng nhập và kiểm tra đã kết nối MySQL đạt chưa. Ngược lại, kiểm tra build và start project.
+ - Vào địa chỉ local host http://localhost:port_tomcat/QLCV/
+ - Nếu hệ thống trả về trang chủ thì đăng nhập và kiểm tra đã kết nối MySQL đạt chưa. Ngược lại, kiểm tra build và start project.
 
 # Triển khai
 Xem trong tài liệu hướng dẫn
 
 # Phát triển với
-Struts2 FrameWork
-Hibernate 4 FrameWork
-GoJS.net
+ - Struts2 FrameWork
+ - Hibernate 4 FrameWork
+ - GoJS.net
 
 # Phiên bản
 N/A
 
 # Chủ sở hữu
-Nguyễn Công Sơn
-Phone: 0358.346.836
-Email: son.nguyencong.hust
-Hướng dẫn: TS.Vũ Thị Hương Giang
-Viện: Công nghệ thông tin và truyền thông, Đại học Bách Khoa Hà Nội
+ - Nguyễn Công Sơn
+ - Phone: 0358.346.836
+ - Email: son.nguyencong.hust
+ - Hướng dẫn: TS.Vũ Thị Hương Giang
+ - Viện: Công nghệ thông tin và truyền thông, Đại học Bách Khoa Hà Nội
 
 # Pháp lý
-Mã nguồn này chỉ được phục vụ cho mục đích tham khảo.
+Mã nguồn này chỉ được sử dụng cho mục đích tham khảo.
