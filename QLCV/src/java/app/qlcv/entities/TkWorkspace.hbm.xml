@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkWorkspace" table="tk_workspace" catalog="taskandkpi" optimistic-lock="version">
+        <comment>Danh s&#225;ch c&#225;c d? &#225;n trong ph&#242;ng ban</comment>
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="createDate" type="date">
+            <column name="CREATE_DATE" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="10" />
+        </property>
+        <property name="createBy" type="string">
+            <column name="CREATE_BY" length="250" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="LAST_UPDATE_BY" length="250" />
+        </property>
+        <property name="isPrivate" type="string">
+            <column name="IS_PRIVATE" length="1">
+                <comment>C&#243; ph?i l&#224; workspace ? ch? ?? ri&#234;ng t? hay kh&#244;ng?</comment>
+            </column>
+        </property>
+        <property name="isIndividual" type="string">
+            <column name="IS_INDIVIDUAL" length="1">
+                <comment>L&#224; workspace c&#225; nh&#226;n kh&#244;ng?</comment>
+            </column>
+        </property>
+        <property name="workspaceName" type="string">
+            <column name="WORKSPACE_NAME" length="500" />
+        </property>
+        <property name="owner" type="string">
+            <column name="OWNER" length="250" />
+        </property>
+        <property name="avatar" type="binary">
+            <column name="AVATAR" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="16777215" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="45" />
+        </property>
+        <property name="startDate" type="date">
+            <column name="START_DATE" length="10"  />
+        </property>
+        <property name="endDate" type="date">
+            <column name="END_DATE" length="10"  />
+        </property>
+        <property name="departmentId" type="int">
+            <column name="DEPARTMENT_ID" />
+        </property>
+        <property name="tienKhoan" type="java.lang.Long">
+            <column name="TIEN_KHOAN" precision="10" scale="0" />
+        </property>
+        <property name="etcAmount" type="java.lang.Long">
+            <column name="ETC_AMOUNT" precision="10" scale="0" />
+        </property>
+        <property name="etcDate" type="date">
+            <column name="ETC_DATE" length="10" />
+        </property>
+        <set name="tkWsPeoples" table="tk_ws_people" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tk_workspace_id" not-null="true" />
+            </key>
+            <one-to-many class="app.qlcv.entities.TkWsPeople" />
+        </set>
+        <set name="tkWsTeamses" table="tk_ws_teams" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tk_workspace_ID" not-null="true" />
+            </key>
+            <one-to-many class="app.qlcv.entities.TkWsTeams" />
+        </set>
+        <set name="tkWsTasklists" table="tk_ws_tasklist" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tk_workspace_ID" not-null="true" />
+            </key>
+            <one-to-many class="app.qlcv.entities.TkWsTasklist" />
+        </set>
+    </class>
+</hibernate-mapping>

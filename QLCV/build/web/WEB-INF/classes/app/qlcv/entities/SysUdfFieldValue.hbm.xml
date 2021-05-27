@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.SysUdfFieldValue" table="sys_udf_field_value" catalog="taskandkpi" optimistic-lock="version">
+         <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="versionTime" type="int">
+            <column name="VERSION_TIME" not-null="true" />
+        </property>
+        <property name="createBy" type="string">
+            <column name="CREATE_BY" length="250" not-null="true" />
+        </property>
+        <property name="creationDate" type="date">
+            <column name="CREATION_DATE" length="10" not-null="true" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="LAST_UPDATE_BY" length="250" not-null="true" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="10" not-null="true" />
+        </property>
+        <property name="refId" type="java.lang.Integer">
+            <column name="REF_ID" />
+        </property>
+        <property name="refKey" type="string">
+            <column name="REF_KEY" length="65535" />
+        </property>
+        <property name="sysUdfFieldId" type="java.lang.Integer">
+            <column name="SYS_UDF_FIELD_ID" />
+        </property>
+        <property name="extValue1" type="string">
+            <column name="EXT_VALUE1" length="65535" />
+        </property>
+        <property name="extValue2" type="string">
+            <column name="EXT_VALUE2" length="65535" />
+        </property>
+        <property name="extValue3" type="string">
+            <column name="EXT_VALUE3" length="65535" />
+        </property>
+        <property name="extValue4" type="string">
+            <column name="EXT_VALUE4" length="65535" />
+        </property>
+        <property name="extValue5" type="string">
+            <column name="EXT_VALUE5" length="65535" />
+        </property>
+        <property name="blockIndex" type="java.lang.Integer">
+            <column name="BLOCK_INDEX" />
+        </property>
+        <property name="fieldValue" type="string">
+            <column name="FIELD_VALUE" length="65535" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,1 @@
+template: https://www.themeslide.com/modern-admin-clean-bootstrap-4-dashboard-html-template/

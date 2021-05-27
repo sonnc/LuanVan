@@ -1,0 +1,92 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="tasklist" extends="struts-default">
+        <action name="taskListAction" class="app.qlcv.workspace.TaskListAction" method="TaskListActions">
+            <result name="PREPARE_CREATE_TASK_LIST">/jsp/tasklist-create.jsp</result>
+            <result name="CREATE_TASK_LIST_SUCCESS">/jsp/tasklist-create-raci.jsp</result>
+            <result name="error">/jsp/errorcode.js</result>
+        </action>
+        <action name="createRaciAction" class="app.qlcv.workspace.TaskListAction" method="TaskListCreateRACI">
+            <result name="CREATE_RACI_SUCCESS">/jsp/workspace-summary.jsp</result>
+            <result name="success">/jsp/tasklist-create.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="createRaciForTaskList" class="app.qlcv.workspace.TaskListAction" method="createRaciForTaskList">
+            <result name="success">/jsp/tasklist-create-raci.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="viewAllTask" class="app.qlcv.workspace.TaskListAction" method="getAllTask">
+            <result name="success">/jsp/workspace-viewtask.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="prepareCreateTask" class="app.qlcv.workspace.TaskListAction" method="prepareCreateTask">
+            <result name="success">/jsp/task-create.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="prepareCreateTaskFollow" class="app.qlcv.workspace.TaskListAction" method="prepareCreateTaskFollow">
+            <result name="success">/jsp/task-create-task-follow.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="createTaskFollow" class="app.qlcv.workspace.TaskListAction" method="createTaskFollow">
+            <result name="success">/jsp/task-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="createTask" class="app.qlcv.workspace.TaskListAction" method="createTask">
+            <result name="success">/jsp/workspace-viewtask.jsp</result>
+            <result name="RETURN_PARENT_TASK">/jsp/task-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="viewRaci" class="app.qlcv.workspace.TaskListAction" method="viewRaci">
+            <result name="success">/jsp/tasklist-view-raci.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="viewTask" class="app.qlcv.workspace.TaskListAction" method="viewTask">
+            <result name="success">/jsp/task-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="editTask" class="app.qlcv.workspace.TaskListAction" method="editTask">
+            <result name="success">/jsp/task-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="createUdf" class="app.qlcv.workspace.TaskListAction" method="createUdf">
+            <result name="success">/jsp/task-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="prepareCreateUdf" class="app.qlcv.workspace.TaskListAction" method="prepareCreateUdf">
+            <result name="success">/jsp/task-create-udf.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="deleteUdf" class="app.qlcv.workspace.TaskListAction" method="deleteUdf">
+            <result name="success">/jsp/task-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="createCheckList" class="app.qlcv.workspace.TaskListAction" method="createCheckList">
+            <result name="success">/jsp/task-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="prepareCreateCheckList" class="app.qlcv.workspace.TaskListAction" method="prepareCreateCheckList">
+            <result name="success">/jsp/task-create-checklist.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="deleteCheckList" class="app.qlcv.workspace.TaskListAction" method="deleteCheckList">
+            <result name="success">/jsp/task-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="uploadFile" class="app.qlcv.workspace.TaskListAction" method="uploadFile">
+            <result name="success">/jsp/task-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="deleteAttachment" class="app.qlcv.workspace.TaskListAction" method="deleteAttachment">
+            <result name="success">/jsp/task-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="deleteTask" class="app.qlcv.workspace.TaskListAction" method="deleteTask">
+            <result name="GET_PARENT_TASK">/jsp/task-view.jsp</result>
+            <result name="GET_ALL_TASK">/jsp/workspace-viewtask.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+    </package>
+</struts>

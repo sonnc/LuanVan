@@ -1,0 +1,28 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="workspace" extends="struts-default">
+        <action name="workspaceAction" class="app.qlcv.workspace.WorkspaceAction" method="RunWorkspaceAction">
+            <result name="PREPARE_CREATE_WORKSPACE">/jsp/workspace-create.jsp</result>
+            <result name="CREATE_NEW_WORKSPACE_SUCCESS">/jsp/workspace-action-forward.jsp</result>
+            <result name="PREPARE_WORKSPACE_CREATE_TEAM">/jsp/workspace-create-team.jsp</result>
+            <result name="CREATE_TEAM_SUSSESS">/jsp/workspace-action-forward-teams.jsp</result>
+            <result name="RETURN_WORKSPACE">/jsp/workspace-dashboard.jsp</result>
+            <result name="EDIT_WORKSPACE">/jsp/workspace-view.jsp</result>
+            <result name="error">/jsp/errorcode.jsp</result>
+        </action>
+        <action name="viewWorkspaceAction" class="app.qlcv.workspace.WorkspaceAction" method="vewWorkspaceByUser">
+            <result name="success">/jsp/workspace-dashboard.jsp</result>
+        </action>
+        <action name="workspaceSumaryAction" class="app.qlcv.workspace.WorkspaceAction" method="WorkspaceSummaryAction">
+            <result name="success">/jsp/workspace-summary.jsp</result>
+        </action>
+        <action name="eventCodeSet" class="app.qlcv.sys.CodeValueAction" method="eventCodeSet">
+            <result name="VIEW_CODESET_CODEVALUE">/jsp/codeset-codevalue-view.jsp</result>
+            <result name="EDIT_CODESET_CODEVALUE">/jsp/codeset-codevalue-edit.jsp</result>
+            <result name="success">/jsp/codeset.jsp</result>
+        </action>
+    </package>
+</struts>

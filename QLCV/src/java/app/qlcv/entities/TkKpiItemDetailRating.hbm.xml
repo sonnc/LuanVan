@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 23, 2020 10:28:58 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkKpiItemDetailRating" table="tk_kpi_item_detail_rating" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tkKpiItemDetail" class="app.qlcv.entities.TkKpiItemDetail" fetch="select">
+            <column name="TK_KPI_ITEM_DETAIL_ID" />
+        </many-to-one>
+        <property name="createBy" type="string">
+            <column name="CREATE_BY" length="45" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="LAST_UPDATE_BY" length="45" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="CREATE_DATE" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="10" />
+        </property>
+        <property name="month" type="java.lang.Integer">
+            <column name="MONTH" />
+        </property>
+        <property name="quater" type="java.lang.Integer">
+            <column name="QUATER" />
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="YEAR" />
+        </property>
+        <property name="trongSo" type="java.lang.Double">
+            <column name="TRONG_SO" precision="22" scale="0" />
+        </property>
+        <property name="tyLeThucHien" type="java.lang.Double">
+            <column name="TY_LE_THUC_HIEN" precision="22" scale="0" />
+        </property>
+        <property name="ketQuaThucHien" type="java.lang.Double">
+            <column name="KET_QUA_THUC_HIEN" precision="22" scale="0" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

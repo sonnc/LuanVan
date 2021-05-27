@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.SysUserDefineFields" table="sys_user_define_fields" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="versionTime" type="int">
+            <column name="VERSION_TIME" not-null="true" />
+        </property>
+        <property name="creationDate" type="date">
+            <column name="CREATION_DATE" length="10" not-null="true" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="10" not-null="true" />
+        </property>
+        <property name="userDefineId" type="java.lang.Integer">
+            <column name="USER_DEFINE_ID" />
+        </property>
+        <property name="fieldType" type="java.lang.Integer">
+            <column name="FIELD_TYPE" />
+        </property>
+        <property name="displayOrder" type="java.lang.Integer">
+            <column name="DISPLAY_ORDER" />
+        </property>
+        <property name="activeInd" type="java.lang.Character">
+            <column name="ACTIVE_IND" length="1" />
+        </property>
+        <property name="displaySection" type="java.lang.Integer">
+            <column name="DISPLAY_SECTION" />
+        </property>
+        <property name="mandatoryInd" type="java.lang.Character">
+            <column name="MANDATORY_IND" length="1" />
+        </property>
+        <property name="code" type="string">
+            <column name="CODE" length="65535" />
+        </property>
+        <property name="field" type="string">
+            <column name="FIELD" length="65535" />
+        </property>
+        <property name="validation" type="string">
+            <column name="VALIDATION" length="65535" />
+        </property>
+        <property name="createBy" type="string">
+            <column name="CREATE_BY" length="65535" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="LAST_UPDATE_BY" length="65535" />
+        </property>
+        <property name="readOnlyInd" type="string">
+            <column name="READ_ONLY_IND" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

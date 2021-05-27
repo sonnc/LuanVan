@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Properties>
+		<Property name="LOG_PATTERN">%d{dd-MM-yyyy} %d{HH:mm:ss} %-5level %logger{36} - %msg%n</Property>
+		<Property name="APP_LOG_ROOT">/opt/GenReport/logs/</Property>
+	</Properties>
+    <Appenders>
+        <RollingFile name="SmlcReport"
+           fileName="${APP_LOG_ROOT}/log.log"
+	        filePattern="${APP_LOG_ROOT}/log-%d{yyyy-MM-dd}-%i.log">
+	        <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10240KB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="50"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="reportLogs" additivity="true">
+            <AppenderRef ref="reportLogs" />
+        </Logger>
+        <Root level="all">
+            <AppenderRef ref="ConsoleAppender"/>
+            <AppenderRef ref="SmlcReport" />
+        </Root>
+    </Loggers>
+</Configuration>

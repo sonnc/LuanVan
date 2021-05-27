@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkWsTaskChecklistItem" table="tk_ws_task_checklist_item" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tkWsTaskChecklist" class="app.qlcv.entities.TkWsTaskChecklist" fetch="select">
+            <column name="tk_ws_task_checklist_id" not-null="true" />
+        </many-to-one>
+        <property name="createBy" type="string">
+            <column name="create_by" length="45" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="last_update_by" length="45" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="create_date" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="last_update_date" length="10" />
+        </property>
+        <property name="itemName" type="string">
+            <column name="item_name" length="500" />
+        </property>
+        <property name="itemStatus" type="string">
+            <column name="item_status" length="45" />
+        </property>
+        <property name="itemAssignee" type="java.lang.Integer">
+            <column name="item_assignee" />
+        </property>
+    </class>
+</hibernate-mapping>

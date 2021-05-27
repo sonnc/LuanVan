@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkWsFolder" table="tk_ws_folder" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="folderName" type="string">
+            <column name="folder_name" length="500" />
+        </property>
+        <property name="folderStatus" type="string">
+            <column name="folder_status" length="45" />
+        </property>
+        <property name="folderDesc" type="string">
+            <column name="folder_desc" length="1000" />
+        </property>
+        <property name="isMilestones" type="string">
+            <column name="isMilestones" length="45" />
+        </property>
+        <property name="milestonesTienkhoan" type="big_decimal">
+            <column name="milestones_tienkhoan" />
+        </property>
+        <property name="milestinesStartDate" type="date">
+            <column name="milestines_start_date" length="10" />
+        </property>
+        <property name="milestonesEndDate" type="date">
+            <column name="milestones_end_date" length="10" />
+        </property>
+        <property name="milestonesCloseDate" type="date">
+            <column name="milestones_close_date" length="10" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <set name="tkWsTasklists" table="tk_ws_tasklist" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tk_ws_folder_id" />
+            </key>
+            <one-to-many class="app.qlcv.entities.TkWsTasklist" />
+        </set>
+    </class>
+</hibernate-mapping>

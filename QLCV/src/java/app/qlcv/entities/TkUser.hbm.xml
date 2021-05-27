@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkUser" table="tk_user" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="versionTime" type="int">
+            <column name="VERSION_TIME" not-null="true" />
+        </property>
+        <property name="creationDate" type="date">
+            <column name="CREATION_DATE" length="10" not-null="true" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="10" not-null="true" />
+        </property>
+        <property name="createBy" type="string">
+            <column name="CREATE_BY" length="250" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="LAST_UPDATE_BY" length="250" />
+        </property>
+        <property name="roleId" type="java.lang.Integer">
+            <column name="ROLE_ID" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="250" />
+        </property>
+        <property name="loginId" type="string">
+            <column name="LOGIN_ID" length="250" not-null="true" />
+        </property>
+        <property name="fullName" type="string">
+            <column name="FULL_NAME" length="500" />
+        </property>
+        <property name="employeeNo" type="string">
+            <column name="EMPLOYEE_NO" length="250" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="4000" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="250" />
+        </property>
+        <property name="langPreference" type="string">
+            <column name="LANG_PREFERENCE" length="10" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="65535" />
+        </property>
+        <property name="mobileNumber" type="string">
+            <column name="MOBILE_NUMBER" length="250" />
+        </property>
+        <property name="officeNumber" type="string">
+            <column name="OFFICE_NUMBER" length="250" />
+        </property>
+        <property name="teamNumber" type="java.lang.Integer">
+            <column name="TEAM_NUMBER" />
+        </property>
+        <property name="profilePicture" type="binary">
+            <column name="PROFILE_PICTURE" />
+        </property>
+        <property name="luongCoSo" type="big_decimal">
+            <column name="LUONG_CO_SO" />
+        </property>
+        <property name="heSo" type="java.lang.Integer">
+            <column name="HE_SO" />
+        </property>
+        <property name="packageSalary" type="big_decimal">
+            <column name="PACKAGE_SALARY" />
+        </property>
+        <many-to-one name="tkDepartment" class="app.qlcv.entities.TkDepartment"  lazy="false" cascade="none" fetch="select">
+            <column name="DEPARTMENT" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

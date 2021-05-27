@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="luongkhoan" extends="struts-default">
+        <action name="themisAction" class="app.qlcv.workspace.KhoanAction" method="getThemisByUserId">
+            <result name="success">/jsp/khoan.jsp</result>
+            <result name="error">/jsp/errorcode.js</result>
+        </action>
+        <action name="themisPrepareCaculateAction" class="app.qlcv.workspace.KhoanAction" method="prepareCreateKhoan">
+            <result name="success">/jsp/khoan-tinh.jsp</result>
+            <result name="error">/jsp/errorcode.js</result>
+        </action>
+        <action name="CaculateThemisAction" class="app.qlcv.workspace.KhoanAction" method="tinhKhoanPhongBan2">
+            <result name="success">/jsp/khoan-tinh.jsp</result>
+            <result name="error">/jsp/errorcode.js</result>
+        </action>
+    </package>
+</struts>

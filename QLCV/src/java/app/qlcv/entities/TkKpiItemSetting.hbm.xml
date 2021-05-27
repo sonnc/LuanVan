@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 18, 2020 5:55:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkKpiItemSetting" table="tk_kpi_item_setting" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tkKpiTypeSetting" class="app.qlcv.entities.TkKpiTypeSetting" fetch="select">
+            <column name="KPI_TYPE_SETING_ID" not-null="true" />
+        </many-to-one>
+        <property name="createBy" type="string">
+            <column name="CREATE_BY" length="45" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="LAST_UPDATE_BY" length="45" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="CREATE_DATE" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="10" />
+        </property>
+        <property name="kpiName" type="string">
+            <column name="KPI_NAME" />
+        </property>
+        <property name="kpiDesc" type="string">
+            <column name="KPI_DESC" />
+        </property>
+        <property name="item" type="java.lang.Double">
+            <column name="ITEM" precision="22" scale="0" />
+        </property>
+        <property name="donViTinh" type="string">
+            <column name="DON_VI_TINH" length="45" />
+        </property>
+        <property name="trongSo" type="java.lang.Double">
+            <column name="TRONG_SO" precision="22" scale="0" />
+        </property>
+        <property name="tanSuatDanhGia" type="string">
+            <column name="TAN_SUAT_DANH_GIA" length="45" />
+        </property>
+        <property name="thoiDiemDanhGia" type="string">
+            <column name="THOI_DIEM_DANH_GIA" length="450" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="45" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" length="45" />
+        </property>
+        <property name="isKetQua" type="string">
+            <column name="IS_KET_QUA" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

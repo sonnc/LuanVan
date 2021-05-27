@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkWsAttachments" table="tk_ws_attachments" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="createBy" type="string">
+            <column name="create_by" length="45"/>
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="last_update_by" length="45" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="create_date" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="last_update_date" length="10" />
+        </property>
+        <property name="fileName" type="string">
+            <column name="file_name" length="500" />
+        </property>
+        <property name="fileLink" type="string">
+            <column name="file_link" length="500" />
+        </property>
+        <property name="fileStatus" type="string">
+            <column name="file_status" length="45" />
+        </property>
+        <property name="taskId" type="java.lang.Integer">
+            <column name="task_id" />
+        </property>
+        <property name="taskListId" type="java.lang.Integer">
+            <column name="task_list_id" />
+        </property>
+    </class>
+</hibernate-mapping>

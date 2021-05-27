@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.SysCodeSet" table="sys_code_set" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="versionTime" type="int">
+            <column name="VERSION_TIME" not-null="true" />
+        </property>
+        <property name="creationDate" type="date">
+            <column name="CREATION_DATE" length="10" not-null="true" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="10" not-null="true" />
+        </property>
+        <property name="deprecated" type="java.lang.Character">
+            <column name="DEPRECATED" length="1" />
+        </property>
+        <property name="createBy" type="string">
+            <column name="CREATE_BY" length="250" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="LAST_UPDATE_BY" length="250" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="250" />
+        </property>
+        <property name="code" type="string">
+            <column name="CODE" length="250" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="500" />
+        </property>
+        <set name="sysCodeValues" table="sys_code_value" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CODE_SET_VALUE_ID" />
+            </key>
+            <one-to-many class="app.qlcv.entities.SysCodeValue" />
+        </set>
+    </class>
+</hibernate-mapping>

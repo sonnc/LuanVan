@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkWsPeople" table="tk_ws_people" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tkWorkspace" class="app.qlcv.entities.TkWorkspace" fetch="select">
+            <column name="tk_workspace_id" not-null="true" />
+        </many-to-one>
+        <property name="roleWorkspace" type="string">
+            <column name="role_workspace" length="45" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+        </property>
+        <set name="tkWsTeamses" table="tk_ws_people_teams" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="tk_ws_people_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="app.qlcv.entities.TkWsTeams">
+                <column name="tk_ws_teams_id" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

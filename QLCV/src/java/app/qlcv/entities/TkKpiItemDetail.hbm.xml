@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 23, 2020 10:28:58 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkKpiItemDetail" table="tk_kpi_item_detail" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tkKpiItem" class="app.qlcv.entities.TkKpiItem" fetch="select">
+            <column name="TK_KPI_ITEM_ID" />
+        </many-to-one>
+        <property name="createBy" type="string">
+            <column name="CREATE_BY" length="45" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="LAST_UPDATE_BY" length="45" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="CREATE_DATE" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="10" />
+        </property>
+        <property name="kpiName" type="string">
+            <column name="KPI_NAME" />
+        </property>
+        <property name="kpiDesc" type="string">
+            <column name="KPI_DESC" />
+        </property>
+        <property name="item" type="java.lang.Double">
+            <column name="ITEM" precision="22" scale="0" />
+        </property>
+        <property name="donViTinh" type="string">
+            <column name="DON_VI_TINH" length="45" />
+        </property>
+        <property name="tanSuatDanhGia" type="string">
+            <column name="TAN_SUAT_DANH_GIA" length="45" />
+        </property>
+        <property name="trongSo" type="java.lang.Double">
+            <column name="TRONG_SO" precision="22" scale="0" />
+        </property>
+        <property name="tyLeThucHien" type="java.lang.Double">
+            <column name="TY_LE_THUC_HIEN" precision="22" scale="0" />
+        </property>
+        <property name="ketQuaThucHien" type="java.lang.Double">
+            <column name="KET_QUA_THUC_HIEN" precision="22" scale="0" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="45" />
+        </property>
+        <property name="refId" type="java.lang.Integer">
+            <column name="REF_ID" />
+        </property>
+        <property name="month" type="java.lang.Integer">
+            <column name="MONTH" />
+        </property>
+        <property name="source" type="string">
+            <column name="SOURCE" />
+        </property>
+        <property name="refIdSource" type="string">
+            <column name="REF_ID_SOURCE" />
+        </property>
+        <set name="tkKpiItemDetailRatings" table="tk_kpi_item_detail_rating" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="TK_KPI_ITEM_DETAIL_ID" />
+            </key>
+            <one-to-many class="app.qlcv.entities.TkKpiItemDetailRating" />
+        </set>
+    </class>
+</hibernate-mapping>

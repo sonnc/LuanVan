@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from MainReportService WSDL service -->
+
+  <service name="MainReport" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://main.sonnc"/>
+      <parameter name="wsdlServiceElement" value="MainReportService"/>
+      <parameter name="schemaQualified" value="http://main.sonnc"/>
+      <parameter name="wsdlServicePort" value="MainReport"/>
+      <parameter name="className" value="sonnc.main.MainReport"/>
+      <parameter name="wsdlPortType" value="MainReport"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://main.sonnc" xmlns:retNS="http://main.sonnc" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="mainReportJasperWS" qname="operNS:mainReportJasperWS" returnQName="retNS:mainReportJasperWSReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://main.sonnc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userid" type="tns:int"/>
+        <parameter xmlns:pns="http://main.sonnc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nameTemplate" type="tns:string"/>
+        <parameter xmlns:pns="http://main.sonnc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:fileType" type="tns:string"/>
+        <parameter xmlns:pns="http://main.sonnc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ip1" type="tns:int"/>
+        <parameter xmlns:pns="http://main.sonnc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ip2" type="tns:int"/>
+        <parameter xmlns:pns="http://main.sonnc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ip3" type="tns:int"/>
+        <parameter xmlns:pns="http://main.sonnc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:sp1" type="tns:string"/>
+        <parameter xmlns:pns="http://main.sonnc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:sp2" type="tns:string"/>
+        <parameter xmlns:pns="http://main.sonnc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:sp3" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="mainReportJasperWS"/>
+
+  </service>
+</deployment>

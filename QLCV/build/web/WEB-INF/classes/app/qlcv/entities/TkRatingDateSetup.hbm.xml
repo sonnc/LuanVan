@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2020 3:08:51 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkRatingDateSetup" table="tk_rating_date_setup" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="createDate" type="date">
+            <column name="CREATE_DATE" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="10" />
+        </property>
+        <property name="createBy" type="string">
+            <column name="CREATE_BY" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="LAST_UPDATE_BY" />
+        </property>
+        <property name="ratingStart" type="java.lang.Integer">
+            <column name="RATING_START" length="10" />
+        </property>
+        <property name="ratingEnd" type="java.lang.Integer">
+            <column name="RATING_END" length="10" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 4, 2021 11:21:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkKpiTypeSetting" table="tk_kpi_type_setting" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tkDepartment" class="app.qlcv.entities.TkDepartment" lazy="false" cascade="none" fetch="select">
+            <column name="PHONG_BAN" not-null="true" />
+        </many-to-one>
+        <property name="createBy" type="string">
+            <column name="CREATE_BY" length="45" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="LAST_UPDATE_BY" length="45" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="CREATE_DATE" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="10" />
+        </property>
+        <property name="kpiName" type="string">
+            <column name="KPI_NAME" />
+        </property>
+        <property name="kpiDesc" type="string">
+            <column name="KPI_DESC" />
+        </property>
+        <property name="trongSoKpiPhongban" type="java.lang.Double">
+            <column name="TRONG_SO_KPI_PHONGBAN" precision="22" scale="0" />
+        </property>
+        <property name="trongSoKpiThuongxuyen" type="java.lang.Double">
+            <column name="TRONG_SO_KPI_THUONGXUYEN" precision="22" scale="0" />
+        </property>
+        <property name="trongSoKpiDotxuat" type="java.lang.Double">
+            <column name="TRONG_SO_KPI_DOTXUAT" precision="22" scale="0" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="45" />
+        </property>
+        <property name="apDung" type="string">
+            <column name="AP_DUNG" length="45" />
+        </property>
+        <set name="tkKpiItemSettings" table="tk_kpi_item_setting" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="KPI_TYPE_SETING_ID" not-null="true" />
+            </key>
+            <one-to-many class="app.qlcv.entities.TkKpiItemSetting" />
+        </set>
+    </class>
+</hibernate-mapping>

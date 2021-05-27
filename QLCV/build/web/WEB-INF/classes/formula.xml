@@ -1,0 +1,32 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="formula" extends="struts-default">
+        <action name="createNewParameter" class="app.qlcv.sys.CalculationFormulaAction" method="createNewParameter">
+            <result name="success">/jsp/parameter-setup.jsp</result>
+        </action>
+        <action name="getAllParameter" class="app.qlcv.sys.CalculationFormulaAction" method="getAllParameter">
+            <result name="success">/jsp/parameter-setup.jsp</result>
+        </action>
+        <action name="prepareCreateFormula" class="app.qlcv.sys.CalculationFormulaAction" method="getAllParameter">
+            <result name="success">/jsp/formula-create.jsp</result>
+        </action>
+        <action name="createFormula" class="app.qlcv.sys.CalculationFormulaAction" method="createFormula">
+            <result name="success">/jsp/formula.jsp</result>
+        </action>
+        <action name="getAllFormula" class="app.qlcv.sys.CalculationFormulaAction" method="getAllFormula">
+            <result name="success">/jsp/formula.jsp</result>
+        </action>
+        <action name="getAllFormulaForCompaire" class="app.qlcv.sys.CalculationFormulaAction" method="getAllFormula">
+            <result name="success">/jsp/formula-compaire.jsp</result>
+        </action>
+        <action name="prepareCompaireFormula" class="app.qlcv.sys.CalculationFormulaAction" method="prepareCompaireFormula">
+            <result name="success">/jsp/formula-compaire-value.jsp</result>
+        </action>
+        <action name="compaireFormula" class="app.qlcv.sys.CalculationFormulaAction" method="compaireFormula">
+            <result name="success">/jsp/formula-compaire-result.jsp</result>
+        </action>
+    </package>
+</struts>

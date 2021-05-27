@@ -1,0 +1,38 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.multipart.maxSize" value="5242880" />
+    <include file="codeset.xml"/>
+    <include file="workspace.xml"/>
+    <include file="tasklist.xml"/>
+    <include file="task.xml"/>
+    <include file="luongkhoan.xml"/>
+    <include file="tk_kpi.xml"/>
+    <include file="formula.xml"/>
+    <include file="qlda.xml"/>
+    
+    <package name="default" extends="struts-default">
+        <action name="UserLogin" class="app.qlcv.user.UserAction" method="UserLogin">
+            <result name="success">/jsp/home.jsp</result>
+            <result name="input">/jsp/login.jsp</result>
+            <result name="error" type="redirect">404.jsp</result>
+        </action>
+        <action name="UserLogout" class="app.qlcv.user.UserAction" method="UserLogout">
+            <result name="success">/jsp/login.jsp</result>
+        </action>
+        <action name="getDataHome" class="app.qlcv.user.UserAction" method="getDataHomeValue">
+            <result name="success">/jsp/home.jsp</result>
+        </action>
+        <action name="adminKpiAction" class="app.kpi.AdminKpiAction" method="adminKpi">
+            <result name="VIEW_ALL_KPI_SUCCESS">/tk_admin/kpi.jsp</result>
+            <result name="VIEW_KPI_DETAIL_SUCCESS">/tk_admin/kpi-detail.jsp</result>
+            <result name="PREPARE_CREATE_KPI_SUCCESS">/tk_admin/kpi-create.jsp</result>
+            <result name="PREPARE_CREATE_KPI_RATING_DATE">/tk_admin/kpi-timeSeting.jsp</result>
+            <result name="CREATE_KPI_RATING_DATE">/tk_admin/kpi-timeSeting.jsp</result>
+            <result name="EDIT_DEPARTMENT">/tk_admin/department-edit.jsp</result>
+            <result name="CREATE_DEPARTMENT">/tk_admin/department.jsp</result>
+        </action>
+    </package>
+</struts>

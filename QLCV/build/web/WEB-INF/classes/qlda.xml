@@ -1,0 +1,26 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="qlda" extends="struts-default">
+        <action name="cpmNodeGenData" class="app.qlcv.workspace.GenDataArrayAction" method="cpmNodeGenData">
+            <result name="success">/jsp/critical-path.jsp</result>
+        </action>
+        <action name="TfwRunToView" class="app.qlcv.workspace.TfwAction" method="TfwRunToView">
+            <result name="success">/jsp/tfw.jsp</result>
+        </action>
+        <action name="evmGenData" class="app.qlcv.workspace.EvmAction" method="EvmGenData">
+            <result name="success">/jsp/evm.jsp</result>
+        </action>
+        <action name="getAllTaskInWorkspaceForEVM" class="app.qlcv.workspace.EvmAction" method="getAllTaskInWorkspaceForEVM">
+            <result name="success">/jsp/so-tien-chi.jsp</result>
+        </action>
+        <action name="saveAmount" class="app.qlcv.workspace.EvmAction" method="saveAmount">
+            <result name="success">/jsp/so-tien-chi.jsp</result>
+        </action>
+        <action name="DownloadAction" class="app.soap.DownloadAction" method="DownloadReport">
+            <result name="success">/jsp/bao-cao.jsp</result>
+        </action>
+    </package>
+</struts>

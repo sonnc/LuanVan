@@ -1,0 +1,24 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="task" extends="struts-default">
+        <action name="GetTaskByUser" class="app.qlcv.workspace.TaskAction" method="GetAllTaskByUserId">
+            <result name="success">/jsp/mytask.jsp</result>
+            <result name="error">/jsp/errorcode.js</result>
+        </action>
+        <action name="updateTask" class="app.qlcv.workspace.TaskAction" method="updateTask">
+            <result name="success">/jsp/mytask.jsp</result>
+            <result name="error">/jsp/errorcode.js</result>
+        </action>
+        <action name="TaskPendingRating" class="app.qlcv.workspace.TaskAction" method="getAllTaskPendingRating">
+            <result name="success">/jsp/mytask.jsp</result>
+            <result name="error">/jsp/errorcode.js</result>
+        </action>
+        <action name="prepareEditTask" class="app.qlcv.workspace.TaskAction" method="prepareEditTask">
+            <result name="success">/jsp/task-edit.jsp</result>
+            <result name="error">/jsp/errorcode.js</result>
+        </action>
+    </package>
+</struts>

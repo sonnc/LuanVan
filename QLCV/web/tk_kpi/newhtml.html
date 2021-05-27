@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS Only Lightbox / Popup</title>
+        <link href="styles.css" rel="stylesheet" type="text/css" />
+        <style>
+            /*                    body {
+             background: #ddd;
+             margin: 0;
+             font-family: arial;
+             font-size: 1.2em;
+             color: #111;
+            }
+                    
+            .wrapper {
+             max-width: 960px;
+             margin: 10% auto;
+             text-align: center;
+             line-height: 2em;
+            }
+                    
+            .button {
+             border: 3px solid #111;
+             adding: 10px;
+             color: #111;
+             text-decoration: none;
+            }*/
+
+
+            .popup {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgba(0,0,0,0.6);
+                display: none;
+            }
+
+            #xmas-popup .popup-content{
+                width: 600px;
+                height: 600px;
+                background: #ffffff;
+                margin: 100px auto;
+                position: relative;
+                border: 5px solid #fff;
+            }
+
+            .close {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                border-radius: 50%;
+                background: #222;
+                border: 3px solid #fff;
+                color: #fff;
+                text-decoration: none;
+                line-height: 0;
+                padding: 9px 0 11px;
+                width: 20px;
+                text-align: center;
+            }
+
+            .popup:target {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <!-- popup code -->
+        <div id="xmas-popup" class="popup" href="#">
+            <div class="popup-content">
+                <a href="#" class="close">x</a>
+                <div>
+                    <form>
+                        <input name="aaa" value="aaaa"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- normal page code -->
+        <div class="wrapper">
+            <a href="#xmas-popup" class="button">Show popup</a>
+        </div>
+    </body>
+</html>

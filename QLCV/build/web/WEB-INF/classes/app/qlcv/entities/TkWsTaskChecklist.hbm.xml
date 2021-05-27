@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkWsTaskChecklist" table="tk_ws_task_checklist" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tkWsTask" class="app.qlcv.entities.TkWsTask" fetch="select">
+            <column name="tk_ws_task_id" not-null="true" />
+        </many-to-one>
+        <property name="createBy" type="string">
+            <column name="create_by" length="45" />
+        </property>
+        <property name="lastUdpateBy" type="string">
+            <column name="last_udpate_by" length="45" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="create_date" length="10" />
+        </property>
+        <property name="lastUdpateDate" type="date">
+            <column name="last_udpate_date" length="10" />
+        </property>
+        <property name="checkListName" type="string">
+            <column name="check_list_name" length="500" />
+        </property>
+        <property name="checkListDesc" type="string">
+            <column name="check_list_desc" length="500" />
+        </property>
+        <property name="checkListStatus" type="string">
+            <column name="check_list_status" length="45" />
+        </property>
+        <set name="tkWsTaskChecklistItems" table="tk_ws_task_checklist_item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tk_ws_task_checklist_id" not-null="true" />
+            </key>
+            <one-to-many class="app.qlcv.entities.TkWsTaskChecklistItem" />
+        </set>
+    </class>
+</hibernate-mapping>

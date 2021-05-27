@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 4:59:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.qlcv.entities.TkWsTask" table="tk_ws_task" catalog="taskandkpi" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tkWsTasklist" class="app.qlcv.entities.TkWsTasklist" fetch="select">
+            <column name="tk_ws_tasklist_id" not-null="true" />
+        </many-to-one>
+        <property name="createBy" type="string">
+            <column name="create_by" length="45" />
+        </property>
+        <property name="lastUpdateBy" type="string">
+            <column name="last_update_by" length="45" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="create_date" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="last_update_date" length="10" />
+        </property>
+        <property name="taskName" type="string">
+            <column name="task_name" length="500" />
+        </property>
+        <property name="taskDesc" type="string">
+            <column name="task_desc" length="2000" />
+        </property>
+        <property name="isSubTask" type="string">
+            <column name="is_sub_task" length="1" not-null="true" />
+        </property>
+        <property name="parentTaskId" type="java.lang.Integer">
+            <column name="parent_task_id" />
+        </property>
+        <property name="assigneeUserId" type="java.lang.Integer">
+            <column name="assignee_user_id" />
+        </property>
+        <property name="startDate" type="date">
+            <column name="start_date" length="10" />
+        </property>
+        <property name="dateClose" type="date">
+            <column name="date_close" length="10" />
+        </property>
+        <property name="dueDate" type="date">
+            <column name="due_date" length="10" />
+        </property>
+        <property name="priority" type="java.lang.Integer">
+            <column name="priority" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <property name="timeEstimate" type="java.lang.Integer">
+            <column name="time_estimate" />
+        </property>
+        <property name="timeEstimateDdl" type="java.lang.Integer">
+            <column name="time_estimate_ddl" />
+        </property>
+        <property name="nganSach" type="java.lang.Long">
+            <column name="ngan_sach" precision="10" scale="0" />
+        </property>
+        <property name="nganSachCcy" type="java.lang.Integer">
+            <column name="ngan_sach_ccy" />
+        </property>
+        <property name="amountPlan" type="java.lang.Long">
+            <column name="amount_plan" precision="10" scale="0" />
+        </property>
+        <property name="amountSpent" type="java.lang.Long">
+            <column name="amount_spent" precision="10" scale="0" />
+        </property>
+        <property name="amountRemain" type="java.lang.Long">
+            <column name="amount_remain" precision="10" scale="0" />
+        </property>
+        <property name="reviewBy" type="java.lang.Integer">
+            <column name="review_by"/>
+        </property>
+        <property name="refId" type="string">
+            <column name="ref_id"/>
+        </property>
+        <property name="source" type="string">
+            <column name="source"/>
+        </property>
+        <property name="followTask" type="string">
+            <column name="follow_task"/>
+        </property>
+        <property name="etcAmountPlan" type="java.lang.Long">
+            <column name="etc_amount_plan" precision="10" scale="0" />
+        </property>
+        <property name="etcDatePlan" type="date">
+            <column name="etc_date_plan" length="10" />
+        </property>
+        <property name="percentCoplete" type="java.lang.Long">
+            <column name="percent_coplete" precision="10" scale="0" />
+        </property>
+        <set name="tkWsTaskChecklists" table="tk_ws_task_checklist" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tk_ws_task_id" not-null="true" />
+            </key>
+            <one-to-many class="app.qlcv.entities.TkWsTaskChecklist" />
+        </set>
+    </class>
+</hibernate-mapping>
